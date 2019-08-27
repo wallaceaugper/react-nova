@@ -16,6 +16,7 @@ export default class CardRepos extends Component {
 
                         <Image src={logo} className="app-logo" />
                         <span id="titulo">Repositórios</span>
+                        <span id="qtdRepos">4</span>
 
                         <input id="input" type="text" />
                         <button id="botao">ADD</button>

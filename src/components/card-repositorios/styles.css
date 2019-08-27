@@ -43,3 +43,10 @@
   font-weight: 350;
   margin-left: 10px
 }
+
+#qtdRepos {
+  font-size: 21px;
+  font-weight: bold;
+  color: #8245bf;
+  margin-left: 60px;
+}
