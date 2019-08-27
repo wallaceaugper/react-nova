@@ -1,10 +1,11 @@
 import React from 'react';
+import CardRepos from './components/card-repositorios';
 
 import './styles.css';
 
 const App = () => (
   <div className="App">
-    <h1>Oi</h1>
+    <CardRepos />
   </div>
 );
 
