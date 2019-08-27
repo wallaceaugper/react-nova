@@ -1,10 +1,26 @@
 import React, { Component } from 'react';
 import { Card, Image } from 'semantic-ui-react';
-import logo from '../../img/logo.svg';
 
+import api from '../../services';
+
+import logo from '../../img/logo.svg';
 import './styles.css';
 
 export default class CardRepos extends Component {
+    state = {
+        repositorios: []
+    }
+
+    componentDidMount() {
+        this.loadRepositorios();
+    }
+
+    loadRepositorios = async () => {
+        // const response = await api.get(`/WallaceHayabusa`);
+        // console.log(response);
+        // this.setState({ repositorios });
+    }
+
     render() {
         return (
             <div className="card">

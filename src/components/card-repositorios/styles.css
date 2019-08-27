@@ -41,7 +41,8 @@
   font-family: Roboto;
   font-size: 18px;
   font-weight: 350;
-  margin-left: 10px
+  margin-left: 10px;
+  width: 55px;
 }
 
 #qtdRepos {
