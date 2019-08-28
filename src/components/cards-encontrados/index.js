@@ -11,7 +11,7 @@ export default class CardsEncontrados extends Component {
                 <Card>
                     <Card.Content>
                         <span id="titulo-card">{this.props.repositorio.full_name}</span>
-                        <div id="empresa-card">{this.props.repositorio.organization.login}</div>
+                        <span id="empresa-card">{this.props.repositorio.organization.login}</span>
                         <br />
                         <br />
                         <span>Starts</span>

@@ -13,7 +13,7 @@
     font-style: normal;
     font-stretch: normal;
     letter-spacing: normal;
-    text-align: left;
+    text-align: center;
     display: block;
     margin-left: 52px;
   }
@@ -24,5 +24,6 @@
 
   #empresa-card {
     font-size: 15px;
-    margin-left: 100px;
+    text-align: center;
+    display: block;
   }
