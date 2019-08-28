@@ -1,24 +1,19 @@
 import React, { Component } from 'react';
 import { Card, Image } from 'semantic-ui-react';
 
-import api from '../../services';
-
 import logo from '../../img/logo.svg';
 import './styles.css';
 
 export default class CardRepos extends Component {
+
     state = {
-        repositorios: []
+        inputValue: ''
     }
 
-    componentDidMount() {
-        this.loadRepositorios();
-    }
-
-    loadRepositorios = async () => {
-        // const response = await api.get(`/WallaceHayabusa`);
-        // console.log(response);
-        // this.setState({ repositorios });
+    handleSubmit = (event) => {
+        event.preventDefault();
+        console.log(this.state.inputValue)
+        this.props.click(this.state.inputValue);
     }
 
     render() {
@@ -32,10 +27,11 @@ export default class CardRepos extends Component {
 
                         <Image src={logo} className="app-logo" />
                         <span id="titulo">Repositórios</span>
-                        <span id="qtdRepos">4</span>
-
-                        <input id="input" type="text" />
-                        <button id="botao">ADD</button>
+                        <span id="qtdRepos">{this.props.qtdeRepositorios}</span>
+                        <form className="form" onSubmit={this.handleSubmit}>
+                            <input id="input" onChange={event => this.setState({ inputValue: event.target.value })} type="text" />
+                            <button id="botao" type="submit">ADD</button>
+                        </form>
                     </Card.Content>
                 </Card>
             </div>

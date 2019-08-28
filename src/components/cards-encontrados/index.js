@@ -5,65 +5,28 @@ import './styles.css';
 
 export default class CardsEncontrados extends Component {
     render() {
+        console.log(this.props.repositorio)
         return (
             <div className="corpo">
-                <Card.Group itemsPerRow={4}>
-                    <Card>
-                        <Card.Content>
-                            <div className="erro">
-                                <span>Mensagem de erro aqui</span>
-                            </div>
+                <Card>
+                    <Card.Content>
+                        <span id="titulo-card">{this.props.repositorio.full_name}</span>
+                        <div id="empresa-card">{this.props.repositorio.organization.login}</div>
+                        <br />
+                        <br />
+                        <span>Starts</span>
+                        <span className="dados">{this.props.repositorio.stargazers_count}</span>
+                        <br />
+                        <br />
+                        <span>Language</span>
+                        <span className="dados">{this.props.repositorio.language}</span>
+                        <br />
+                        <br />
+                        <span>Forks</span>
+                        <span className="dados">{this.props.repositorio.forks}</span>
 
-                            <span id="titulo">Repositórios</span>
-                            <span id="qtdRepos">4</span>
-
-                            <input id="input" type="text" />
-                            <button id="botao">ADD</button>
-                        </Card.Content>
-                    </Card>
-
-                    <Card>
-                        <Card.Content>
-                            <div className="erro">
-                                <span>Mensagem de erro aqui</span>
-                            </div>
-
-                            <span id="titulo">Repositórios</span>
-                            <span id="qtdRepos">4</span>
-
-                            <input id="input" type="text" />
-                            <button id="botao">ADD</button>
-                        </Card.Content>
-                    </Card>
-
-                    <Card>
-                        <Card.Content>
-                            <div className="erro">
-                                <span>Mensagem de erro aqui</span>
-                            </div>
-
-                            <span id="titulo">Repositórios</span>
-                            <span id="qtdRepos">4</span>
-
-                            <input id="input" type="text" />
-                            <button id="botao">ADD</button>
-                        </Card.Content>
-                    </Card>
-
-                    <Card>
-                        <Card.Content>
-                            <div className="erro">
-                                <span>Mensagem de erro aqui</span>
-                            </div>
-
-                            <span id="titulo">Repositórios</span>
-                            <span id="qtdRepos">4</span>
-
-                            <input id="input" type="text" />
-                            <button id="botao">ADD</button>
-                        </Card.Content>
-                    </Card>
-                </Card.Group>
+                    </Card.Content>
+                </Card>
             </div>
         );
     }

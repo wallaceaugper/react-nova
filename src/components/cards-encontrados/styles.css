@@ -1,3 +1,28 @@
 .corpo {
     margin-top: 15px;
+    margin-left: 35px;
+    display: inline-flex;
 }
+
+#titulo-card {
+    width: 158px;
+    height: 37px;
+    font-family: Roboto;
+    font-size: 21px;
+    font-weight: 500;
+    font-style: normal;
+    font-stretch: normal;
+    letter-spacing: normal;
+    text-align: left;
+    display: block;
+    margin-left: 52px;
+  }
+
+  .dados {
+      float: right;
+  }
+
+  #empresa-card {
+    font-size: 15px;
+    margin-left: 100px;
+  }
