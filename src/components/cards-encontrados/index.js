@@ -1,20 +1,26 @@
 import React, { Component } from 'react';
 import { Card } from 'semantic-ui-react';
 
+import reload from '../../img/reload.svg';
+import remove from '../../img/remove.svg';
 import './styles.css';
 
 export default class CardsEncontrados extends Component {
+    removerCard = () => {
+        this.props.onRemove(this.props.id);
+    }
+
     render() {
-        console.log(this.props.repositorio)
         return (
             <div className="corpo">
                 <Card>
                     <Card.Content>
+                        <img className="imagem" src={this.props.repositorio.organization.avatar_url} alt=""></img>
                         <span id="titulo-card">{this.props.repositorio.full_name}</span>
                         <span id="empresa-card">{this.props.repositorio.organization.login}</span>
                         <br />
                         <br />
-                        <span>Starts</span>
+                        <span>Stars</span>
                         <span className="dados">{this.props.repositorio.stargazers_count}</span>
                         <br />
                         <br />
@@ -24,7 +30,9 @@ export default class CardsEncontrados extends Component {
                         <br />
                         <span>Forks</span>
                         <span className="dados">{this.props.repositorio.forks}</span>
-
+                        <br />
+                        <input type="image" className="botoes" src={reload} alt=""></input>
+                        <input type="image" className="botoes" src={remove} alt="" onClick={this.removerCard}></input>
                     </Card.Content>
                 </Card>
             </div>

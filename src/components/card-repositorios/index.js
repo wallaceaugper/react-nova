@@ -12,20 +12,18 @@ export default class CardRepos extends Component {
 
     handleSubmit = (event) => {
         event.preventDefault();
-        console.log(this.state.inputValue)
         this.props.click(this.state.inputValue);
     }
 
     render() {
         return (
-            <div className="card">
+            < div className="card" >
                 <Card centered>
                     <Card.Content>
-                        <div className="erro">
-                            <span>Mensagem de erro aqui</span>
-                        </div>
+                        <span className="erro">{this.props.mensagem}</span>
 
                         <Image src={logo} className="app-logo" />
+
                         <span id="titulo">Repositórios</span>
                         <span id="qtdRepos">{this.props.qtdeRepositorios}</span>
                         <form className="form" onSubmit={this.handleSubmit}>
@@ -34,7 +32,7 @@ export default class CardRepos extends Component {
                         </form>
                     </Card.Content>
                 </Card>
-            </div>
+            </div >
         );
     }
 }

@@ -27,3 +27,14 @@
     text-align: center;
     display: block;
   }
+
+  .imagem {
+    width: 105px;
+    margin-left: 77px;
+  }
+
+  .botoes {
+    width: 25px;
+    float: right;
+    margin-left: 2px;
+  }

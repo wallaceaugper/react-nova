@@ -5,24 +5,35 @@ import CardsEncontrados from '../cards-encontrados/index';
 
 export default class Main extends Component {
     state = {
-        repositorios: []
+        repositorios: [],
+        mensagem: ''
+    }
+
+    callBackRemover = (id) => {
+        const repositorios = this.state.repositorios.filter((_, index) => id !== index)
+        this.setState({ repositorios });
     }
 
     loadRepositorios = async (repositorio) => {
         try {
             const response = await api.get(repositorio);
-            this.setState({ repositorios: [...this.state.repositorios, response.data] });
+            const repos = this.state.repositorios.filter(repo => repo.full_name === repositorio);
+
+            if (repos.length === 0) {
+                this.setState({ repositorios: [...this.state.repositorios, response.data], mensagem: '' });
+            } else {
+                this.setState({ mensagem: 'Não foi possível adicionar o repositório' });
+            }
         } catch (err) {
             console.log(err)
         }
     }
 
     render() {
-
         return (
             <div>
-                <CardRepos click={this.loadRepositorios} qtdeRepositorios={this.state.repositorios.length} />
-                {this.state.repositorios.map((repositorio) => (<CardsEncontrados repositorio={repositorio} />))};
+                <CardRepos click={this.loadRepositorios} qtdeRepositorios={this.state.repositorios.length} mensagem={this.state.mensagem} />
+                {this.state.repositorios.map((repositorio, index) => (<CardsEncontrados key={index} id={index} repositorio={repositorio} onRemove={this.callBackRemover} />))};
             </div>
         );
     }

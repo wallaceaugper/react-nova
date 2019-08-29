@@ -31,7 +31,11 @@
 }
 
 .erro {
+  width: 431px;
+  height: 39px;
+  border-radius: 5px;
   background-color: #f2cb05;
+  color: #ffffff;
 }
 
 #botao {
