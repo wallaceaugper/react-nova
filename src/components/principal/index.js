@@ -14,6 +14,15 @@ export default class Main extends Component {
         this.setState({ repositorios });
     }
 
+    callBackAtualizar = async (id, repositorio) => {
+        const response = await api.get(repositorio);
+
+        const repositorios = this.state.repositorios;
+        repositorios[id] = response.data;
+
+        this.setState({ repositorios });
+    }
+
     loadRepositorios = async (repositorio) => {
         try {
             const response = await api.get(repositorio);
@@ -33,7 +42,8 @@ export default class Main extends Component {
         return (
             <div>
                 <CardRepos click={this.loadRepositorios} qtdeRepositorios={this.state.repositorios.length} mensagem={this.state.mensagem} />
-                {this.state.repositorios.map((repositorio, index) => (<CardsEncontrados key={index} id={index} repositorio={repositorio} onRemove={this.callBackRemover} />))};
+                {this.state.repositorios.map((repositorio, index) => (<CardsEncontrados key={index} id={index} repositorio={repositorio}
+                    onRemove={this.callBackRemover} onRefresh={this.callBackAtualizar} />))};
             </div>
         );
     }

@@ -6,9 +6,9 @@ import remove from '../../img/remove.svg';
 import './styles.css';
 
 export default class CardsEncontrados extends Component {
-    removerCard = () => {
-        this.props.onRemove(this.props.id);
-    }
+    removerCard = () => this.props.onRemove(this.props.id);
+
+    atualizarCard = () => this.props.onRefresh(this.props.id, this.props.repositorio.full_name);
 
     render() {
         return (
@@ -31,7 +31,7 @@ export default class CardsEncontrados extends Component {
                         <span>Forks</span>
                         <span className="dados">{this.props.repositorio.forks}</span>
                         <br />
-                        <input type="image" className="botoes" src={reload} alt=""></input>
+                        <input type="image" className="botoes" src={reload} alt="" onClick={this.atualizarCard}></input>
                         <input type="image" className="botoes" src={remove} alt="" onClick={this.removerCard}></input>
                     </Card.Content>
                 </Card>
